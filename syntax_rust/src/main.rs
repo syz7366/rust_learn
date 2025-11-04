@@ -1,19 +1,150 @@
 // use num::complex::Complex;
 
-
-
-fn main(){
-    // let x = '中';
-    // println!("字符中'中'占用了{}字节的内存大小", size_of_val(&x));
-    let t = true;
-
-    let f: bool = false; // 使用类型标注,显式指定f的类型
-
-    if f {
-        println!("这是段毫无意义的代码");
-    }
-
+fn main() {
+    let reference_to_nothing = dangle();
 }
+
+fn dangle() -> &String {
+    let s = String::from("hello");
+
+    &s
+}
+
+
+// fn main(){
+//     let mut s = String::from("hello");
+
+//     let r1 = &s;
+//     let r2 = &s;
+//     println!("{} and {}", r1, r2);
+//     // 新编译器中，r1,r2作用域在这里结束
+
+//     let r3 = &mut s;
+//     println!("{}", r3);
+// }
+
+
+// fn main() {
+    // let mut s = String::from("hello");
+    // {
+    //     let r1 = &mut s;
+    //     println!("{}", r1);
+    // } // r1 在这里离开了作用域，所以我们完全可以创建一个新的引用
+    // let r2 = &mut s;
+    // println!("{}", r2);
+    // println!("{}, {}", r1, r2);
+    // let mut s = String::from("hello");
+    // change(&mut s);
+    // println!("s: {}", s);
+    // let mut s = String::from("hello");
+    // let r1 = &mut s;
+    // let r2 = &mut s;
+    
+    // println!("{}, {}", r1, r2);
+// }
+
+// fn change(some_string: &mut String) {
+//     some_string.push_str(", world");
+// }
+
+
+// fn main() {
+//     let s1 = String::from("hello");
+
+//     let len = calculate_length(&s1);
+
+//     println!("The length of '{}' is {}.", s1, len);
+// }
+
+// fn calculate_length(s: &String) -> usize {
+//     s.len()
+// }
+
+// fn main(){
+//     let x = 5;
+//     let y = &x;
+
+//     assert_eq!(5, x);
+//     assert_eq!(5, *y);
+//     // assert_eq!(5, y);
+// }
+
+// fn main() {
+//     let s1 = gives_ownership();         
+                                        
+
+//     let s2 = String::from("hello");     
+
+//     let s3 = takes_and_gives_back(s2);  
+// } 
+
+// fn gives_ownership() -> String {             
+
+//     let some_string = String::from("hello"); 
+
+//     some_string                              
+// }
+
+// fn takes_and_gives_back(a_string: String) -> String { 
+
+//     a_string  
+// }
+
+// fn main(){
+//     let s = String::from("hello");
+//     takes_ownership(s);
+//     println!("s: {}", s);
+//     let x = 5;
+//     makes_copy(x);
+//     println!("x: {}", x);
+// }
+
+// fn takes_ownership(s: String){
+//     println!("s: {}", s);
+// }
+
+// fn makes_copy(x: i32){
+//     println!("x: {}", x);
+// }
+
+// fn main(){
+//     let s1 = String::from("hello");
+//     let s2 = s1.clone();
+//     println!("s1 = {}, s2 = {}", s1, s2);
+// }
+
+// fn plus_five(x:i32) -> i32 {
+//     x + 5
+// }
+
+// fn main() {
+//     let x = plus_five(5);
+
+//     println!("The value of x is: {}", x);
+// }
+
+// fn main(){
+//     another_function(5, 6.4);
+// }
+
+// fn another_function(x:i32, y:f32){
+//     // 不接受匿名参数了
+//     println!("x: {}", x);
+//     println!("y: {}", y);
+// }
+
+// fn main(){
+//     // let x = '中';
+//     // println!("字符中'中'占用了{}字节的内存大小", size_of_val(&x));
+//     let t = true;
+
+//     let f: bool = false; // 使用类型标注,显式指定f的类型
+
+//     if f {
+//         println!("这是段毫无意义的代码");
+//     }
+
+// }
 
 
 // fn main() {
