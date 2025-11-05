@@ -1,15 +1,186 @@
 // use num::complex::Complex;
 
-fn main() {
-    let reference_to_nothing = dangle();
+fn main(){
+
+    for c in "中国人".bytes() {
+        println!("{}", c);
+    }
+
+
+
+    // 通过 \ + 字符的十六进制表示，转义输出一个字符
+    // let byte_escape = "I'm writing \x52\x75\x73\x74!";
+    // println!("What are you doing\x3F (\\x3F means ?) {}", byte_escape);
+
+    // // \u 可以输出一个 unicode 字符
+    // let unicode_codepoint = "\u{211D}";
+    // let character_name = "\"DOUBLE-STRUCK CAPITAL R\"";
+
+    // println!(
+    //     "Unicode character {} (U+211D) is called {}",
+    //     unicode_codepoint, character_name
+    // );
+    // // 换行了也会保持之前的字符串格式
+    // // \n可以忽略换行符
+    // let long_string = "String literals
+    //                     can span multiple lines.
+    //                     The linebreak and indentation here ->\
+    //                     <- can be escaped too!";
+    // println!("{}", long_string);
+
+    // 字符串转义
+    // let s1 = "hello";
+    // let s2 = String::from("rust");
+    // let s3 = "world";
+    // let s = format!("{} {}!", s1, s3);
+    // println!("{}", s);
+    // println!("{}", s1);
+    // println!("{}", s2);
+    // println!("{}", s3);
+    // let s1 = String::from("hello,");
+    // let s2 = String::from("world!");
+    // // 在下句中，s1的所有权被转移走了，因此后面不能再使用s1
+    // let s3 = s1 + &s2;
+    // assert_eq!(s3,"hello,world!");
+
+    // // 字符串拼接
+    // let string_append = String::from("hello ");
+    // let string_rust = String::from("rust");
+    // // &string_rust 会自动解引用为&str
+    // let result = string_append + &string_rust;
+    // let mut result = result + "!"; // `result + "!"` 中的 `result` 是不可变的
+    // result += "!!!";
+
+    // println!("连接字符串 + -> {}", result);
+    // 所有权已经被转移
+    // println!("连接字符串 += -> {}", string_append);
+    // let mut string_clear = String::from("string clear");
+    // string_clear.clear();
+    // dbg!(string_clear);
+
+    // let mut string_truncate = String::from("测试truncate方法");     这里是以字节为单位的
+    // string_truncate.truncate(3);
+    // dbg!(string_truncate);
+    // let mut string_remove = String::from(
+    //     "测试remove方法"
+    // );
+    // println!(
+    //     "string_remove 占 {} 个字节",
+    //     std::mem::size_of_val(string_remove.as_str())
+    // );
+    // 删除第一个汉字
+    // string_remove.remove(0);
+    // 下面代码会发生错误
+    // string_remove.remove(1);
+    // 直接删除第二个汉字
+    // string_remove.remove(3);
+    // dbg!(string_remove);
+
+    // let mut string_pop = String::from("rust pop 中文！");
+    // let p1 = string_pop.pop();
+    // let p2 = string_pop.pop();
+    // dbg!(p1);
+    // dbg!(p2);
+    // dbg!(string_pop);
+
+    // let string_replace = String::from("I like rust. Learning rust is my favorite!");
+    // let mut string_replace_range = String::from("I like rust. Learning rust is my favorite!");
+    // // let new_string_replace = string_replace.replace("rust", "RUST");
+    // // let new_string_replace = string_replace.replacen("rust", "RUST", 1);
+    // string_replace_range.replace_range(0..1,"R");
+    // dbg!(string_replace_range);
+    // dbg!(new_string_replace);
+
+    // let mut s = String::from("Hello rust!");
+    // s.insert(5, ',');
+    // println!("插入字符 insert() -> {}", s);
+    // s.insert_str(6, " I like");
+    // println!("插入字符串 insert_str() -> {}", s);
+
+    // let mut s = String::from("Hello ");
+
+    // s.push_str("rust");
+    // println!("追加字符串 push_str() -> {}", s);
+
+    // s.push('!');
+    // println!("追加字符 push() -> {}", s);
+    // let s = String::from("hello world!");
+    // say_hello(&s);
+    // say_hello(&s[..]);
+    // say_hello(s.as_str());
+
+    // let a = [1, 2, 3, 4, 5];
+    // let slice = &a[1..3];
+    // assert_eq!(slice, &[2, 3]);
 }
+// fn say_hello(s: &str){
+//     println!("Hello, {}!", s);
+// }
 
-fn dangle() -> &String {
-    let s = String::from("hello");
 
-    &s
-}
+// fn main() {
+//     let mut s = String::from("hello world");
 
+//     let word = first_word(&s);
+
+//     s.clear(); // error!
+
+//     println!("the first word is: {}", word);
+// }
+// fn first_word(s: &String) -> &str {
+//     &s[..1]
+// }
+
+// fn main(){
+//     let s = String::from("hello");
+
+//     let len = s.len();
+    
+//     // let slice = &s[4..len];
+//     let slice = &s[4..];
+//     println!("{}", slice);
+
+//     // let s = String::from("hello world");
+//     // let hello = &s[0..5];
+//     // let world = &s[6..11];
+
+//     // println!("{} {}", hello, world);
+// }
+
+
+// #![allow(unused_variables)]
+// type File = String;
+
+// fn open(f: &mut File) -> bool {
+//     true
+// }
+
+// fn close(f: &mut File)->bool{
+//     true
+// }
+
+// #[allow(dead_code)]
+// fn read(f: &mut File, save_to: &mut Vec<u8>) -> ! {
+//     unimplemented!()
+// }
+
+// fn main(){
+//     let mut f1 = File::from("f1.txt");
+//     open(&mut f1);
+//     read(&mut f1, &mut vec![]);
+//     close(&mut f1);
+// }
+
+
+// fn main() {
+//     let reference_to_nothing = dangle();
+// }
+
+// fn dangle() -> &String {
+//     let s = String::from("hello");
+
+//     &s
+// }
 
 // fn main(){
 //     let mut s = String::from("hello");
