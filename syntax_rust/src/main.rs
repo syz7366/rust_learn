@@ -5,12 +5,44 @@
 //     println!("{}",s);
 // }
 
+// fn create_arr(n: i32) {
+//     let arr = [1; n];
+//     println!("{:?}", arr);
+// }
+
 fn main(){
 
-    for c in "你好，世界".chars() {
-        println!("{}", c)
-    }
+    let arr = [1,2,3];
+    let s1: [i32] = arr[0..2];
+    let s2: str = "hello, world" as str;
 
+    // let names = [String::from("Sunfei"),"Sunface".to_string()];
+    // let name0 = names.get(0).unwrap();
+    // println!("{}", name0);
+    // let _name1 = &names[1];
+    // println!("{}", _name1);
+
+    // let arr = ['a', 'b', 'c'];
+    // let ele = arr[0]; // 只修改此行来让代码工作
+    // assert!(ele == 'a');
+    // let list: [i32; 100] = [1; 100];
+    // println!("{:?}", list);
+    // assert!(list[0] == 1);
+    // assert!(list.len() == 100);
+    // let arr0 = [1, 2, 3];
+    // let arr: [_; 3] = ['a', 'b', 'c'];
+    // println!("{:?}", arr0);
+    // println!("{:?}", arr);
+    // assert!(std::mem::size_of_val(&arr) == 12);
+
+    // let arr:[i32; 5] = [1, 2, 3, 4, 5];
+    // println!("{:?}", arr);
+    // println!("{}", arr.len());
+
+
+    // for c in "你好，世界".chars() {
+    //     println!("{}", c)
+    // }
     // let s1 = String::from("hi,中国");
     // let h = &s1[0..1]; // 修改当前行来修复错误，提示: `h` 字符在 UTF-8 格式中只需要 1 个字节来表示
     // assert_eq!(h, "h");
