@@ -1,13 +1,78 @@
 // use num::complex::Complex;
 
+
+// fn greetings(s: &str){
+//     println!("{}",s);
+// }
+
 fn main(){
 
-    for c in "中国人".bytes() {
-        println!("{}", c);
+    for c in "你好，世界".chars() {
+        println!("{}", c)
     }
 
+    // let s1 = String::from("hi,中国");
+    // let h = &s1[0..1]; // 修改当前行来修复错误，提示: `h` 字符在 UTF-8 格式中只需要 1 个字节来表示
+    // assert_eq!(h, "h");
+    // println!("{}",h);
 
+    // let h1 = &s1[3..6];// 修改当前行来修复错误，提示: `中` 字符在 UTF-8 格式中需要 3 个字节来表示
+    // assert_eq!(h1, "中");
+    // println!("{}",h1);
 
+    // let raw_bytestring = br"\u{211D} is not escaped here";
+    // println!("{:?}", raw_bytestring);
+    // if let Ok(my_str) = str::from_utf8(raw_bytestring) {
+    //     println!("And the same as text: '{}'", my_str);
+    // }
+
+    // let bytestring: &[u8; 21] = b"this is a byte string";
+    // println!("A byte string: {:?}", bytestring);
+
+    // let escaped = b"\x52\x75\x73\x74 as bytes";
+    // println!("Some escaped bytes: {:?}", escaped);
+
+    // let raw_str = r"Escapes don't work here: \x3F \u{211D}";
+    // assert_eq!(raw_str, "Escapes don't work here: ? ℝ");
+    // println!("{}",raw_str);
+
+    // let quotes = r#"And then I said: "There is no escape!""#;
+    // println!("{}", quotes);
+    // let long_string = "String literals
+    // can span multiple lines.
+    // The linebreak and indentation here \
+    //  can be escaped too!";
+    // println!("{}", long_string);
+    
+    // let byte_escape = "I'm writing Ru\x73\x74!";
+    // println!("What are you doing\x3F (\\x3F means ?) {}", byte_escape);
+
+    // let s1 = String::from("hello,");
+    // let s2 = String::from("world!");
+    // let s3 = s1 + &s2; 
+    // assert_eq!(s3,"hello,world!");
+    // // println!("{}",s1);
+    // println!("{}",s2);
+    // println!("{}",s3);
+
+    // let s = String::from("I like dogs");
+    // // 以下方法会重新分配一块内存空间，然后将修改后的字符串存在这里
+    // let s1 = s.replace("dogs", "cats");
+
+    // assert_eq!(s1, "I like cats")
+
+    // let mut s = String::new();
+    // s.push_str("hello, world");
+    // s.push('!');
+
+    // assert_eq!(s, "hello, world!");
+
+    // let s:Box<str> = "hello, world".into();
+    // greetings(&s);
+
+    // for c in "中国人".bytes() {
+    //     println!("{}", c);
+    // }
     // 通过 \ + 字符的十六进制表示，转义输出一个字符
     // let byte_escape = "I'm writing \x52\x75\x73\x74!";
     // println!("What are you doing\x3F (\\x3F means ?) {}", byte_escape);
