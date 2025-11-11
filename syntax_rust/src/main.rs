@@ -1,21 +1,146 @@
 // use num::complex::Complex;
-
-
 // fn greetings(s: &str){
 //     println!("{}",s);
 // }
-
 // fn create_arr(n: i32) {
 //     let arr = [1; n];
 //     println!("{:?}", arr);
 // }
+// fn type_name_of<T>(_: T) -> &'static str {
+//     std::any::type_name::<T>()
+// }
+// struct Person {
+//     name: String,
+//     age: u8,
+//     hobby: String
+// }
+// struct Unit;
+// trait SomeTrait{
+//     // ... 定义一些行为
+// }
 
+// impl SomeTrait for Unit{}
+
+// fn do_something_with_unit(u: Unit) { 
+
+//     println!("done!");
+// }
+
+// struct Color(i32, i32, i32);
+// struct Point(i32, i32, i32);
+   
+// fn check_color(p: Point) {
+//     let Point(x, _, _) = p;
+//     assert_eq!(x, 0);
+//     assert_eq!(p.1, 127);
+//     assert_eq!(p.2, 255);
+//  }
+// struct Person {
+//     name: String,
+//     age: u8,
+// }
+
+// fn build_person(name: String, age: u8) -> Person {
+//     Person {
+//         age,
+//         name,
+//     }
+// }
+
+struct User {
+    active: bool,
+    username: String,
+    email: String,
+    sign_in_count: u64,
+}
+
+fn set_email(u: User) -> User {
+    User {
+        email: String::from("contact@im.dev"),
+        ..u
+    }
+}
 fn main(){
 
-    let arr = [1,2,3];
-    let s1: [i32] = arr[0..2];
-    let s2: str = "hello, world" as str;
+    // let u1 = User {
+    //     email: String::from("someone@example.com"),
+    //     username: String::from("sunface"),
+    //     active: true,
+    //     sign_in_count: 1,
+    // };
 
+    // let u2 = set_email(u1);
+    // println!("u2: {:?}", u2);
+    // let age = 18;
+    // let mut p = Person {
+    //     name: String::from("sunface"),
+    //     age,
+    // };
+    // p.age = 30;
+    // p.name = String::from("sunfei");
+
+    // println!("{}", p.name);
+    // println!("{}", p.age);
+    // let v = Point(0, 127, 255);
+    // check_color(v);
+    // let u = Unit;
+    // do_something_with_unit(u);
+    // 填空，让代码工作
+    // let age = 30;
+    // let p = Person{
+    //     name: String::from("sunface"),
+    //     age,
+    //     hobby: String::from("coding"),
+    // };
+    // println!("{}", p.name);
+    // println!("{}", p.age);
+    // println!("{}", p.hobby);
+
+    // let tup = (1, 6.4, "hello");
+    // // 填空
+    // let (x,z,y) = tup;
+    // assert_eq!(x, 1);
+    // assert_eq!(y, "hello");
+    // assert_eq!(z, 6.4);
+
+    // let too_long_tuple = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13);
+    // println!("{:?}",too_long_tuple);
+
+    // let _t1: (u8, (i16, u32)) = (0, (-1, 1));
+    // println!("{:?}",_t1);
+    // println!("{}",_t1.0);
+    // println!("{}",_t1.1.0);
+    // println!("{}",_t1.1.1);
+
+    // let t0: (u8,i16) = (0,-1);
+    // println!("t0:{}",t0.0);
+    // println!("t0:{}",t0.1);
+    // let s = "你好，世界";
+    // let slice = &s[0..3];
+    // assert!(slice == "你");
+    // let s = String::from("hello");
+    // let slice1 = &s[0..2];
+
+    // let slice2 = &s[..2];
+    // assert_eq!(slice1, slice2);
+
+
+    // let arr: [i32; 5] = [1, 2, 3, 4, 5];
+    // let slice: &[i32] = &arr[1..4];
+    // assert_eq!(slice, &[2, 3, 4]);
+    // println!("slice:{}",type_name_of(&slice));
+
+
+    // let arr: [char;3] = ['中', '国', '人'];
+    // let slice = &arr[..2];
+    // println!("{:?}", slice);
+    // assert!(std::mem::size_of_val(&slice) == 16);
+
+    // let arr = [1,2,3];
+    // let s1: &[i32] = &arr[0..2];
+    // let s2: &str = "hello, world";
+    // println!("{:?}", s1);
+    // println!("{}", s2);
     // let names = [String::from("Sunfei"),"Sunface".to_string()];
     // let name0 = names.get(0).unwrap();
     // println!("{}", name0);
