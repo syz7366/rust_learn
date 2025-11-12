@@ -1,3 +1,143 @@
+
+
+fn main(){
+
+
+    let mut count = 0u32;
+
+    println!("Let's count until infinity!");
+
+    // 无限循环
+    loop {
+        count += 1;
+
+        if count == 3 {
+            println!("three");
+
+            continue;
+        }
+
+        println!("{}", count);
+
+        if count == 5 {
+            println!("OK, that's enough");
+
+            break;
+        }
+    }
+    assert_eq!(count, 5);
+
+    // let mut n =1;
+    // while n<10 {
+    //     n+=1;
+    // }
+    // println!("n: {}", n);
+    // let a = [4,3,2,1];
+    // // 通过索引和值的方式迭代数组 `a` 
+    // for (i,v) in a.iter().enumerate() {
+    //     println!("第{}个元素是{}",i+1,v);
+    // }
+    // let names = [String::from("liming"),String::from("hanmeimei")];
+    // // for name in &names {
+    // //     println!("{}", name);
+    // // }
+    // for name in names.iter() {
+    //     println!("{}", name);
+    // }
+
+    // println!("{:?}", names);
+
+    // let numbers = [1, 2, 3];
+    // for n in numbers {
+    //     println!("{}", n);
+    // }
+    
+    // println!("{:?}", numbers);
+    // for n in 1..=100{
+    //     println!("{}", n);
+    //     if n == 100{
+    //         panic!("NEVER LET THIS RUN！");
+    //     }
+    // }
+    // let n = 5;
+    // let big_n =
+    //     if n < 10 && n>-10{
+    //         println!("数字太小， 增大");
+    //         10* n
+    //     }else{
+    //         println!("数字太大， 缩小范围");
+    //         n / 2
+    //     };
+    // println!("{} -> {}", n, big_n);
+    // let n =5;
+    // if n<0 {
+    //     println!("{} is negative", n);
+    // }else if n>0{
+    //     println!("{} is positive", n);
+    // }else{
+    //     println!("{} is zero", n);
+    // }
+}
+
+
+// use crate::List::*;
+
+// enum List{
+//     // Cons 链表中包含有值的节点，第二个元素指向下一个节点的指针
+//     Cons(u32, Box<List>),
+//     // Nil 链表尾部的值
+//     Nil,
+// }
+
+// impl List{
+//     // 创建空的链表
+//     fn new()->List{
+//         Nil
+//     }
+
+//     fn prepend(self, elem: u32)->List{
+//         Cons(elem, Box::new(self))
+//     }
+
+//     // 链表长度   模式匹配的写法
+//     // fn len(&self) -> usize{
+//     //     match *self{
+//     //         Cons(_, ref tail)=>1+tail.len(),
+//     //         Nil =>0
+//     //     }
+//     // }
+
+//     fn len(&self) -> usize{
+//         if let Cons(value, next)=self {
+//             let tail = next;
+//             1+tail.len()
+//         }else{
+//             0
+//         }
+//     }
+
+//     fn stringify(&self)->String{
+//         match *self{
+//             Cons(head, ref tail)=>{
+//                 format!("{}, {}", head, tail.stringify())
+//             },
+//             Nil =>{
+//                 format!("Nil")
+//             },
+//         }
+//     }
+// }
+
+// fn main(){
+//     let mut list = List::new();
+//     list = list.prepend(1);
+//     list = list.prepend(2);
+//     list = list.prepend(3);
+//     println!("list length: {}", list.len());
+//     println!("list stringify: {}", list.stringify());
+// }
+
+
 // use num::complex::Complex;
 // fn greetings(s: &str){
 //     println!("{}",s);
@@ -47,21 +187,144 @@
 //     }
 // }
 
-struct User {
-    active: bool,
-    username: String,
-    email: String,
-    sign_in_count: u64,
-}
+// struct User {
+//     active: bool,
+//     username: String,
+//     email: String,
+//     sign_in_count: u64,
+// }
 
-fn set_email(u: User) -> User {
-    User {
-        email: String::from("contact@im.dev"),
-        ..u
-    }
-}
-fn main(){
+// fn set_email(u: User) -> User {
+//     User {
+//         email: String::from("contact@im.dev"),
+//         ..u
+//     }
+// }
 
+// #[derive(Debug)]
+// struct User {
+//     active: bool,
+//     username: String,
+//     email: String,
+//     sign_in_count: u64,
+// }
+
+// fn set_email(u: User) -> User {
+//     User {
+//         email: String::from("contact@im.dev"),
+//         ..u
+//     }
+// }
+// #[derive(Debug)]
+// struct File {
+//     name: String,
+//     data: String,
+// }
+// enum Number{
+//     Zero,
+//     One,
+//     Two,
+// }
+// enum Number1{
+//     Zero = 0,
+//     One,
+//     Two,
+// }
+// enum Number2 {
+//     Zero = 0.0,
+//     One = 1.0,
+//     Two = 2.0,
+// }
+
+// #[derive(Debug)]
+// enum Message {
+//     Quit,
+//     Move { x: i32, y: i32 },
+//     Write(String),
+//     ChangeColor(i32, i32, i32),
+// }
+
+// fn show_message(msg: Message) {
+//     println!("{:?}", msg);
+// }
+
+// fn plus_one(x: Option<i32>) -> Option<i32>{
+//     match x{
+//         None => None,
+//         Some(i) => Some(i + 1),
+//     }
+// }
+
+// fn main(){
+
+//     let five =Some(5);
+//     let six = plus_one(five);
+//     let none = plus_one(None);
+
+//     if let Some(n) = six {
+//         println!("{}", n)
+//     } 
+
+//     panic!("NEVER LET THIS RUN！");
+    // panic!("不要让这行代码运行！");
+    // let msgs: [Message; 3] = [
+    //     Message::Quit,
+    //     Message::Move{x:1, y:3},
+    //     Message::ChangeColor(255,255,0)
+    // ];
+    // for msg in msgs {
+    //     show_message(msg)
+    // }
+
+    // let msg = Message::Move{x: 1, y: 2};
+
+    // if let Message::Move{x:a,y:b} = msg {
+    //     assert_eq!(a, b);
+    // } else {
+    //     panic!("随便打印点什么");
+    // }
+
+    // let msg1 = Message::Move { x:1, y:2 };
+    // let msg2 = Message::Write(String::from("hello"));
+    // println!("msg1: {:?}", msg1);
+    // println!("msg2: {:?}", msg2);
+    // println!("Number: {:?}", Number::One as i32);
+    // println!("Number1: {:?}", Number1::One as i32);
+    // println!("Number2: {:?}", Number2::One);
+    // assert_eq!(Number::One as i32, Number1::One as i32);
+    // assert_eq!(Number1::One, Number2::One);
+    // let f = File {
+    //     name: String::from("readme.md"),
+    //     data: "Rust By Practice".to_string()
+    // };
+    // let _name = f.name;
+    // // 只能修改这一行
+    // println!("{}",f.data);
+
+    // #[derive(Debug)]
+    // struct Person {
+    //     name: String,
+    //     age: Box<u8>,
+    // }
+    // let person = Person {
+    //     name: String::from("Alice"),
+    //     age: Box::new(18),
+    // };
+    // 结构体所有权问题
+    // let Person { name, ref age } = person;
+    // println!("person: {:?}", person);
+    // println!("person.age: {}", *person.age);
+    // println!("person.name: {}", person.name);
+    // println!("The person's age from person struct is {}", person.age);
+
+    // let u1 = User {
+    //     email: String::from("someone"),
+    //     username: String::from("sunface"),
+    //     active: true,
+    //     sign_in_count: 1,
+    // };
+    // let u2 = set_email(u1);
+    // println!("u2: {:?}", u2);
     // let u1 = User {
     //     email: String::from("someone@example.com"),
     //     username: String::from("sunface"),
@@ -334,7 +597,7 @@ fn main(){
     // let a = [1, 2, 3, 4, 5];
     // let slice = &a[1..3];
     // assert_eq!(slice, &[2, 3]);
-}
+// }
 // fn say_hello(s: &str){
 //     println!("Hello, {}!", s);
 // }
