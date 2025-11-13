@@ -1,31 +1,88 @@
 
 
+// enum MyEnum{
+//     Foo,
+//     Bar
+// }
+
+// enum Foo{
+//     Bar(u8)
+// }
+
 fn main(){
 
 
-    let mut count = 0u32;
 
-    println!("Let's count until infinity!");
+    let age = Some(30);
+    if let Some(age) = age { // 创建一个新的变量，该变量与之前的 `age` 变量同名
+       assert_eq!(age, 30);
 
-    // 无限循环
-    loop {
-        count += 1;
-
-        if count == 3 {
-            println!("three");
-
-            continue;
-        }
-
-        println!("{}", count);
-
-        if count == 5 {
-            println!("OK, that's enough");
-
-            break;
-        }
+    } // 新的 `age` 变量在这里超出作用域
+    
+    match age {
+        // `match` 也能实现变量遮蔽
+        Some(age) =>  println!("age 是一个新的变量，它的值是 {}",age),
+        _ => ()
     }
-    assert_eq!(count, 5);
+
+    // let a = Foo::Bar(1);
+    // if let Foo::Bar(i) = a {
+    //     println!("foobar 持有的值是: {}", i);
+    // }
+    // let o = Some(7);
+    // let mut count = 0;
+
+    // let v = vec![MyEnum::Foo,MyEnum::Bar,MyEnum::Foo];
+    // for e in v {
+    //     if matches!(e, MyEnum::Foo) { // 修复错误，只能修改本行代码
+    //         count += 1;
+    //     }
+    // }
+    // assert_eq!(count, 2);
+
+    // let alphabets = ['a', 'E', 'Z', '0', 'x', '9' , 'Y'];
+
+    // // 使用 `matches!` 填空
+    // for ab in alphabets {
+    //     assert!(matches!(ab, 'a'..='z' | 'A'..='Z' | '0'..='9'))
+    // }
+    // let mut count = 0;
+    // 'outer: loop {
+    //     'inner1: loop {
+    //         if count >= 20 {
+    //             // 这只会跳出 inner1 循环
+    //             break 'inner1; // 这里使用 `break` 也是一样的
+    //         }
+    //         count += 2;
+    //     }
+    //     count += 5;
+    //     'inner2: loop {
+    //         if count >= 30 {
+    //             break 'outer;
+    //         }
+    //         continue 'outer;
+    //     }
+    // }
+    // assert!(count == 30)
+
+
+    // let mut count = 0u32;
+    // println!("Let's count until infinity!");
+    // // 无限循环， 需要手动跳出
+    // loop {
+    //     count += 1;
+    //     if count == 3 {
+    //         println!("three");
+    //         continue;
+    //     }
+    //     println!("{}", count);
+    //     if count == 5 {
+    //         println!("OK, that's enough");
+
+    //         break;
+    //     }
+    // }
+    // assert_eq!(count, 5);
 
     // let mut n =1;
     // while n<10 {
