@@ -9,22 +9,92 @@
 //     Bar(u8)
 // }
 
+// struct Point{
+//     x: i32,
+//     y: i32,
+// }
+// enum Message{
+//     Hello {id: i32},
+// }
+
+
 fn main(){
 
 
+    let mut v = String::from("hello,");
+    let r = &mut v;
 
-    let age = Some(30);
-    if let Some(age) = age { // 创建一个新的变量，该变量与之前的 `age` 变量同名
-       assert_eq!(age, 30);
-
-    } // 新的 `age` 变量在这里超出作用域
-    
-    match age {
-        // `match` 也能实现变量遮蔽
-        Some(age) =>  println!("age 是一个新的变量，它的值是 {}",age),
-        _ => ()
+    match r {
+    //    &mut value => value.push_str(" world!") 
+        &mut value => value.push_str(" world!")
     }
+    // println!("r: {}", r);
+    println!("v: {}", r);
+    // let numbers = (2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048);
+    // match numbers {
+    //     (first, .., last) => {
+    //        assert_eq!(first, 2);
+    //        assert_eq!(last, 2048);
+    //     }
+    // }
+    // let num =Some(4);
+    // let split = 5;
+    // match num {
+    //     Some(x)  if x< split => assert!(x < split),
+    //     Some(x)  => assert!(x >= split),
+    //     None => (),
+    // }
+    // let numbers = (2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048);
+    // match numbers {
 
+    // }
+
+
+    // let msg = Message::Hello{id:5};
+    // match msg {
+    //     Message::Hello {
+    //         id: id_num@3..=7,  // 使用 @ 绑定变量
+    //     } => println!("id 值的范围在 [3, 7] 之间: {}", id_num),
+    //     Message::Hello { id: newid@(10 | 11 | 12) } => {  // @ 后面的模式需要用括号括起来
+    //         println!("id 值的范围在 [10, 12] 之间: {}", newid)
+    //     }
+    //     Message::Hello { id } => println!("Found some other id: {}", id),
+    // }
+    // let p = Point{x: 1, y: 0};
+    // match p {
+    //     Point{x, y:0} => println!("x: {}", x),
+    //     Point { x: 0..=5, y: y@ (10 | 20 | 30) } => println!("On the y axis at {}", y),
+    //     Point { x, y } => println!("On neither axis: ({}, {})", x, y),
+    // }
+
+    // fn match_number(n: i32){
+    //     // 匹配一个单独的值
+    //     match n{
+    //         1=> println!("One!"),
+    //         2..=5=> println!("match 2 -> 5"),
+    //         6..=10 => {
+    //             println!("match 6 -> 10");
+    //         },
+    //         _ => println!("match other number")
+    //     }
+    // }
+    // match_number(1);
+    // match_number(2);
+    // match_number(6);
+    // match_number(11);
+    // match_number(100);
+
+    // let age = Some(30);
+    // if let Some(age) = age { // 创建一个新的变量，该变量与之前的 `age` 变量同名
+    //    assert_eq!(age, 30);
+
+    // } // 新的 `age` 变量在这里超出作用域
+    
+    // match age {
+    //     // `match` 也能实现变量遮蔽
+    //     Some(age) =>  println!("age 是一个新的变量，它的值是 {}",age),
+    //     _ => ()
+    // }
     // let a = Foo::Bar(1);
     // if let Foo::Bar(i) = a {
     //     println!("foobar 持有的值是: {}", i);
