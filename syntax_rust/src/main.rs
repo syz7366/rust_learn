@@ -1,16 +1,47 @@
 
 
 fn main(){
-    let mut s: String = "hello, ";
-    s.push_str("world");
-    s.push('!');
-    println!("{}", s);
 
-    let s1 = String::from("hello, ");
-    
+    let mut s = String::new();
 
 
+    // let s = String::from("hello, 世界");
+    // for (i, c) in s.chars().enumerate() {
+    //     if i == 7 {
+    //         assert_eq!(c, '世')
+    //     }
+    // }
+    // println!("Success!")
+    // 基于‘&str’类型创建一个String，
+    // 字符串字面量的类型是 &str
+    // let s: String = String::from("hello, world");
+    // let mut s = String::from("hello, world");
+    // let slice1: &str = &s[..];
+    // assert_eq!(slice1, "hello, world");
+    // let slice2 = &s[..5];
+    // assert_eq!(slice2, "hello");
+    // let slice3: &mut String = &mut s; 
+    // slice3.push('!');
+    // assert_eq!(slice3, "hello, world!");
+ 
+    // println!("Success!")
+    // let mut s = String::from("hello, world");
+    // let slice1:
 }
+
+// fn move_ownership(s: String) {
+//     println!("ownership of \"{}\" is moved here!", s)
+// }
+// fn main(){
+//     let mut s: String = "hello, ".to_owned();
+//     s.push_str("world");
+    
+//     s.push('!');
+//     move_ownership(s.clone());
+//     assert_eq!(s, "hello, world!");
+//     println!("Success!");
+//     let s1 = String::from("hello, ");
+// }
 
 
 // // struct Point{
